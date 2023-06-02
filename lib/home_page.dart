@@ -27,13 +27,115 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Victasoft"),
+        title: const Text("Victasoft"),
         centerTitle: true,
       ),
       body: victasoftData != null
           ? SingleChildScrollView(
               child: Column(
                 children: [
+                  Container(
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.fromLTRB(5, 15, 11, 0),
+                          child: TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                            ),
+                            child: Container(
+                              width: 50,
+                              height: 50,
+                              child: Image.asset(
+                                "assets/images/location-cwG.png",
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.fromLTRB(10, 15, 11, 0),
+                          child: TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                            ),
+                            child: Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: Color(0xffffffff),
+                                borderRadius: BorderRadius.circular(25),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Color(0x35000000),
+                                    offset: Offset(0, 3),
+                                    blurRadius: 2.5,
+                                  ),
+                                ],
+                              ),
+                              child: const Center(
+                                child: Text(
+                                  "En",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.2,
+                                    color: Color(0xff2f243f),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.fromLTRB(5, 15, 20, 0),
+                          width: 70,
+                          height: 70,
+                          child: Image.asset(
+                            "assets/images/logo-ELE.png",
+                            width: 70,
+                            height: 70,
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.fromLTRB(10, 15, 11, 0),
+                          child: TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                            ),
+                            child: Container(
+                              width: 50,
+                              height: 50,
+                              child: Image.asset(
+                                "assets/images/filter.png",
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.fromLTRB(0, 15, 0, 0),
+                          child: TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                            ),
+                            child: Container(
+                              width: 50,
+                              height: 50,
+                              child: Image.asset(
+                                "assets/images/notification.png",
+                                width: 50,
+                                height: 50,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   SizedBox(
                     height: 107,
                     child: ListView.builder(
