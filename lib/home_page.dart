@@ -268,16 +268,18 @@ class _HomePageState extends State<HomePage> {
                                       color: Colors.cyan.shade50,
                                       height: 60,
                                       width: double.infinity,
-                                      child: Text(
-                                        victasoftData!
-                                            .data.allevent[index].eventName,
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont(
-                                          'Urbanist',
-                                          fontSize: 22 * ffem,
-                                          fontWeight: FontWeight.w400,
-                                          height: 1.3 * ffem / fem,
-                                          color: Colors.black,
+                                      child: Center(
+                                        child: Text(
+                                          victasoftData!
+                                              .data.allevent[index].eventName,
+                                          textAlign: TextAlign.center,
+                                          style: SafeGoogleFont(
+                                            'Urbanist',
+                                            fontSize: 22 * ffem,
+                                            fontWeight: FontWeight.w400,
+                                            height: 1.3 * ffem / fem,
+                                            color: Colors.black,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -287,75 +289,78 @@ class _HomePageState extends State<HomePage> {
                                     SizedBox(
                                       height: 60,
                                       width: double.infinity,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Column(
-                                            children: [
-                                              Text(
-                                                formattedDate,
-                                                textAlign: TextAlign.center,
-                                                style: SafeGoogleFont(
-                                                  'Urbanist',
-                                                  fontSize: 14 * ffem,
-                                                  fontWeight: FontWeight.bold,
-                                                  height: 1.0 * ffem / fem,
-                                                  color: Colors.black,
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(top: 16),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Column(
+                                              children: [
+                                                Text(
+                                                  formattedDate,
+                                                  textAlign: TextAlign.center,
+                                                  style: SafeGoogleFont(
+                                                    'Urbanist',
+                                                    fontSize: 14 * ffem,
+                                                    fontWeight: FontWeight.bold,
+                                                    height: 1.0 * ffem / fem,
+                                                    color: Colors.black,
+                                                  ),
                                                 ),
-                                              ),
-                                              Text(
-                                                formattedTime,
-                                                textAlign: TextAlign.center,
-                                                style: SafeGoogleFont(
-                                                  'Urbanist',
-                                                  fontSize: 14 * ffem,
-                                                  height: 1.0 * ffem / fem,
-                                                  color: Colors.black,
+                                                Text(
+                                                  formattedTime,
+                                                  textAlign: TextAlign.center,
+                                                  style: SafeGoogleFont(
+                                                    'Urbanist',
+                                                    fontSize: 14 * ffem,
+                                                    height: 1.0 * ffem / fem,
+                                                    color: Colors.black,
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                          Column(
-                                            children: [
-                                              Text(
-                                                "To",
-                                                style: SafeGoogleFont(
-                                                  'Urbanist',
-                                                  fontSize: 18 * ffem,
-                                                  fontWeight: FontWeight.w400,
-                                                  height: 1.0 * ffem / fem,
-                                                  color: Colors.cyan,
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                Text(
+                                                  "To",
+                                                  style: SafeGoogleFont(
+                                                    'Urbanist',
+                                                    fontSize: 18 * ffem,
+                                                    fontWeight: FontWeight.w400,
+                                                    height: 1.0 * ffem / fem,
+                                                    color: Colors.cyan,
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                          Column(
-                                            children: [
-                                              Text(
-                                                formattedDate,
-                                                textAlign: TextAlign.center,
-                                                style: SafeGoogleFont(
-                                                  'Urbanist',
-                                                  fontSize: 14 * ffem,
-                                                  fontWeight: FontWeight.bold,
-                                                  height: 1.0 * ffem / fem,
-                                                  color: Colors.black,
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                Text(
+                                                  formattedDate,
+                                                  textAlign: TextAlign.center,
+                                                  style: SafeGoogleFont(
+                                                    'Urbanist',
+                                                    fontSize: 14 * ffem,
+                                                    fontWeight: FontWeight.bold,
+                                                    height: 1.0 * ffem / fem,
+                                                    color: Colors.black,
+                                                  ),
                                                 ),
-                                              ),
-                                              Text(
-                                                formattedTime,
-                                                textAlign: TextAlign.center,
-                                                style: SafeGoogleFont(
-                                                  'Urbanist',
-                                                  fontSize: 14 * ffem,
-                                                  height: 1.0 * ffem / fem,
-                                                  color: Colors.black,
+                                                Text(
+                                                  formattedTime,
+                                                  textAlign: TextAlign.center,
+                                                  style: SafeGoogleFont(
+                                                    'Urbanist',
+                                                    fontSize: 14 * ffem,
+                                                    height: 1.0 * ffem / fem,
+                                                    color: Colors.black,
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
+                                              ],
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                     const Divider(
@@ -490,16 +495,18 @@ class _HomePageState extends State<HomePage> {
                                       color: Colors.cyan.shade50,
                                       height: 60,
                                       width: double.infinity,
-                                      child: Text(
-                                        victasoftData!
-                                            .data.allevent[index].eventName,
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont(
-                                          'Urbanist',
-                                          fontSize: 22 * ffem,
-                                          fontWeight: FontWeight.w400,
-                                          height: 1.3 * ffem / fem,
-                                          color: Colors.black,
+                                      child: Center(
+                                        child: Text(
+                                          victasoftData!
+                                              .data.allevent[index].eventName,
+                                          textAlign: TextAlign.center,
+                                          style: SafeGoogleFont(
+                                            'Urbanist',
+                                            fontSize: 22 * ffem,
+                                            fontWeight: FontWeight.w400,
+                                            height: 1.3 * ffem / fem,
+                                            color: Colors.black,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -509,75 +516,78 @@ class _HomePageState extends State<HomePage> {
                                     Container(
                                       height: 60,
                                       width: double.infinity,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Column(
-                                            children: [
-                                              Text(
-                                                formattedDate,
-                                                textAlign: TextAlign.center,
-                                                style: SafeGoogleFont(
-                                                  'Urbanist',
-                                                  fontSize: 14 * ffem,
-                                                  fontWeight: FontWeight.bold,
-                                                  height: 1.0 * ffem / fem,
-                                                  color: Colors.black,
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(top: 16),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Column(
+                                              children: [
+                                                Text(
+                                                  formattedDate,
+                                                  textAlign: TextAlign.center,
+                                                  style: SafeGoogleFont(
+                                                    'Urbanist',
+                                                    fontSize: 14 * ffem,
+                                                    fontWeight: FontWeight.bold,
+                                                    height: 1.0 * ffem / fem,
+                                                    color: Colors.black,
+                                                  ),
                                                 ),
-                                              ),
-                                              Text(
-                                                formattedTime,
-                                                textAlign: TextAlign.center,
-                                                style: SafeGoogleFont(
-                                                  'Urbanist',
-                                                  fontSize: 14 * ffem,
-                                                  height: 1.0 * ffem / fem,
-                                                  color: Colors.black,
+                                                Text(
+                                                  formattedTime,
+                                                  textAlign: TextAlign.center,
+                                                  style: SafeGoogleFont(
+                                                    'Urbanist',
+                                                    fontSize: 14 * ffem,
+                                                    height: 1.0 * ffem / fem,
+                                                    color: Colors.black,
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                          Column(
-                                            children: [
-                                              Text(
-                                                "To",
-                                                style: SafeGoogleFont(
-                                                  'Urbanist',
-                                                  fontSize: 18 * ffem,
-                                                  fontWeight: FontWeight.w400,
-                                                  height: 1.0 * ffem / fem,
-                                                  color: Colors.cyan,
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                Text(
+                                                  "To",
+                                                  style: SafeGoogleFont(
+                                                    'Urbanist',
+                                                    fontSize: 18 * ffem,
+                                                    fontWeight: FontWeight.w400,
+                                                    height: 1.0 * ffem / fem,
+                                                    color: Colors.cyan,
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                          Column(
-                                            children: [
-                                              Text(
-                                                formattedDate,
-                                                textAlign: TextAlign.center,
-                                                style: SafeGoogleFont(
-                                                  'Urbanist',
-                                                  fontSize: 14 * ffem,
-                                                  fontWeight: FontWeight.bold,
-                                                  height: 1.0 * ffem / fem,
-                                                  color: Colors.black,
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                Text(
+                                                  formattedDate,
+                                                  textAlign: TextAlign.center,
+                                                  style: SafeGoogleFont(
+                                                    'Urbanist',
+                                                    fontSize: 14 * ffem,
+                                                    fontWeight: FontWeight.bold,
+                                                    height: 1.0 * ffem / fem,
+                                                    color: Colors.black,
+                                                  ),
                                                 ),
-                                              ),
-                                              Text(
-                                                formattedTime,
-                                                textAlign: TextAlign.center,
-                                                style: SafeGoogleFont(
-                                                  'Urbanist',
-                                                  fontSize: 14 * ffem,
-                                                  height: 1.0 * ffem / fem,
-                                                  color: Colors.black,
+                                                Text(
+                                                  formattedTime,
+                                                  textAlign: TextAlign.center,
+                                                  style: SafeGoogleFont(
+                                                    'Urbanist',
+                                                    fontSize: 14 * ffem,
+                                                    height: 1.0 * ffem / fem,
+                                                    color: Colors.black,
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
+                                              ],
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                     const Divider(
@@ -684,16 +694,20 @@ class _HomePageState extends State<HomePage> {
                                       color: Colors.cyan.shade50,
                                       height: 60,
                                       width: double.infinity,
-                                      child: Text(
-                                        victasoftData!.data.eventcategory[index]
-                                            .categoryName,
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont(
-                                          'Urbanist',
-                                          fontSize: 22 * ffem,
-                                          fontWeight: FontWeight.w400,
-                                          height: 1.3 * ffem / fem,
-                                          color: Colors.black,
+                                      child: Center(
+                                        child: Text(
+                                          victasoftData!
+                                              .data
+                                              .eventcategory[index]
+                                              .categoryName,
+                                          textAlign: TextAlign.center,
+                                          style: SafeGoogleFont(
+                                            'Urbanist',
+                                            fontSize: 22 * ffem,
+                                            fontWeight: FontWeight.w400,
+                                            height: 1.3 * ffem / fem,
+                                            color: Colors.black,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -703,81 +717,82 @@ class _HomePageState extends State<HomePage> {
                                     Container(
                                       height: 60,
                                       width: double.infinity,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Column(
-                                            children: [
-                                              Text(
-                                                formattedDate,
-                                                textAlign: TextAlign.center,
-                                                style: SafeGoogleFont(
-                                                  'Urbanist',
-                                                  fontSize: 14 * ffem,
-                                                  fontWeight: FontWeight.bold,
-                                                  height: 1.0 * ffem / fem,
-                                                  color: Colors.black,
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(top: 16),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Column(
+                                              children: [
+                                                Text(
+                                                  formattedDate,
+                                                  textAlign: TextAlign.center,
+                                                  style: SafeGoogleFont(
+                                                    'Urbanist',
+                                                    fontSize: 14 * ffem,
+                                                    fontWeight: FontWeight.bold,
+                                                    height: 1.0 * ffem / fem,
+                                                    color: Colors.black,
+                                                  ),
                                                 ),
-                                              ),
-                                              Text(
-                                                formattedTime,
-                                                textAlign: TextAlign.center,
-                                                style: SafeGoogleFont(
-                                                  'Urbanist',
-                                                  fontSize: 14 * ffem,
-                                                  height: 1.0 * ffem / fem,
-                                                  color: Colors.black,
+                                                Text(
+                                                  formattedTime,
+                                                  textAlign: TextAlign.center,
+                                                  style: SafeGoogleFont(
+                                                    'Urbanist',
+                                                    fontSize: 14 * ffem,
+                                                    height: 1.0 * ffem / fem,
+                                                    color: Colors.black,
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                          Column(
-                                            children: [
-                                              Text(
-                                                "To",
-                                                style: SafeGoogleFont(
-                                                  'Urbanist',
-                                                  fontSize: 18 * ffem,
-                                                  fontWeight: FontWeight.w400,
-                                                  height: 1.0 * ffem / fem,
-                                                  color: Colors.cyan,
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                Text(
+                                                  "To",
+                                                  style: SafeGoogleFont(
+                                                    'Urbanist',
+                                                    fontSize: 18 * ffem,
+                                                    fontWeight: FontWeight.w400,
+                                                    height: 1.0 * ffem / fem,
+                                                    color: Colors.cyan,
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                          Column(
-                                            children: [
-                                              Text(
-                                                formattedDate,
-                                                textAlign: TextAlign.center,
-                                                style: SafeGoogleFont(
-                                                  'Urbanist',
-                                                  fontSize: 14 * ffem,
-                                                  fontWeight: FontWeight.bold,
-                                                  height: 1.0 * ffem / fem,
-                                                  color: Colors.black,
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                Text(
+                                                  formattedDate,
+                                                  textAlign: TextAlign.center,
+                                                  style: SafeGoogleFont(
+                                                    'Urbanist',
+                                                    fontSize: 14 * ffem,
+                                                    fontWeight: FontWeight.bold,
+                                                    height: 1.0 * ffem / fem,
+                                                    color: Colors.black,
+                                                  ),
                                                 ),
-                                              ),
-                                              Text(
-                                                formattedTime,
-                                                textAlign: TextAlign.center,
-                                                style: SafeGoogleFont(
-                                                  'Urbanist',
-                                                  fontSize: 14 * ffem,
-                                                  height: 1.0 * ffem / fem,
-                                                  color: Colors.black,
+                                                Text(
+                                                  formattedTime,
+                                                  textAlign: TextAlign.center,
+                                                  style: SafeGoogleFont(
+                                                    'Urbanist',
+                                                    fontSize: 14 * ffem,
+                                                    height: 1.0 * ffem / fem,
+                                                    color: Colors.black,
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
+                                              ],
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                     const Divider(
                                       height: 10,
-                                      thickness: 0.5,
-                                      color: Colors.cyan,
                                     ),
                                     const SizedBox(
                                       height: 4,
@@ -877,19 +892,22 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                     ),
                                     Container(
-                                      // color: Colors.cyan,
                                       height: 60,
                                       width: double.infinity,
-                                      child: Text(
-                                        victasoftData!.data.eventcategory[index]
-                                            .categoryName,
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont(
-                                          'Urbanist',
-                                          fontSize: 22 * ffem,
-                                          fontWeight: FontWeight.w400,
-                                          height: 1.3 * ffem / fem,
-                                          color: Colors.black,
+                                      child: Center(
+                                        child: Text(
+                                          victasoftData!
+                                              .data
+                                              .eventcategory[index]
+                                              .categoryName,
+                                          textAlign: TextAlign.center,
+                                          style: SafeGoogleFont(
+                                            'Urbanist',
+                                            fontSize: 22 * ffem,
+                                            fontWeight: FontWeight.w400,
+                                            height: 1.3 * ffem / fem,
+                                            color: Colors.black,
+                                          ),
                                         ),
                                       ),
                                     ),
