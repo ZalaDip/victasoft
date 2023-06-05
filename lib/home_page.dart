@@ -5,7 +5,6 @@ import 'package:victadoft/api_services.dart';
 import 'package:victadoft/utils.dart';
 import 'modal.dart';
 import 'package:iconsax/iconsax.dart';
-// import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,6 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
   List<Victasoft> victasoft = <Victasoft>[];
   Victasoft? victasoftData;
   DateTime now = DateTime.now();
@@ -34,9 +34,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 428;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
     return Scaffold(
       body: victasoftData != null
           ? SingleChildScrollView(
@@ -158,15 +155,14 @@ class _HomePageState extends State<HomePage> {
                       return Builder(
                         builder: (BuildContext context) {
                           return Container(
-                              margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 50 * fem, 8 * fem, 8 * fem),
-                              height: 151 * fem,
+                              margin: EdgeInsets.fromLTRB(0, 50, 8, 8),
+                              height: 151,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(25.0),
                                 child: Image.network(
                                   i.bannerImage,
                                   fit: BoxFit.cover,
-                                  height: 151 * fem,
+                                  height: 151,
                                 ),
                               ));
                         },
@@ -182,53 +178,54 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.cyan,
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(
-                        27 * fem, 0 * fem, 28 * fem, 6 * fem),
+                    margin: EdgeInsets.fromLTRB(27, 0, 28, 6),
                     width: double.infinity,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Container(
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 54 * fem, 1 * fem),
-                          padding: EdgeInsets.fromLTRB(
-                              0 * fem, 8 * fem, 0 * fem, 0 * fem),
-                          child: Text(
-                            'EVENT NEAR YOU',
-                            style: SafeGoogleFont(
-                              'Urbanist',
-                              fontSize: 18 * ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.2 * ffem / fem,
-                              letterSpacing: 6.48 * fem,
-                              color: const Color(0xff2f243f),
+                          margin: EdgeInsets.fromLTRB(0, 0, 54, 1),
+                          padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              'EVENT NEAR YOU',
+                              style: SafeGoogleFont(
+                                'Urbanist',
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                height: 1.2,
+                                letterSpacing: 6.48,
+                                color: const Color(0xff2f243f),
+                              ),
                             ),
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 5 * fem, 0 * fem),
-                          child: Text(
-                            'VIEW ALL',
-                            textAlign: TextAlign.right,
-                            style: SafeGoogleFont(
-                              'Urbanist',
-                              fontSize: 18 * ffem,
-                              fontWeight: FontWeight.w400,
-                              height: 1.2 * ffem / fem,
-                              color: const Color(0xff038e9c),
+                          margin: EdgeInsets.fromLTRB(0, 0, 5, 0),
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              'VIEW ALL',
+                              textAlign: TextAlign.right,
+                              style: SafeGoogleFont(
+                                'Urbanist',
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                                height: 1.2,
+                                color: const Color(0xff038e9c),
+                              ),
                             ),
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 0 * fem, 2 * fem),
-                          width: 9 * fem,
-                          height: 17 * fem,
+                          margin: EdgeInsets.fromLTRB(0, 0, 0, 2),
+                          width: 9,
+                          height: 17,
                           child: Image.asset(
                             'assets/images/vector-6-9dp.png',
-                            width: 9 * fem,
-                            height: 17 * fem,
+                            width: 9,
+                            height: 17,
                           ),
                         ),
                       ],
@@ -243,8 +240,8 @@ class _HomePageState extends State<HomePage> {
                           return Padding(
                             padding: const EdgeInsets.fromLTRB(10, 30, 10, 0),
                             child: SizedBox(
-                              width: 388.86 * fem / 2,
-                              height: 265.31 * fem / 2,
+                              width: 388.86 / 2,
+                              height: 265.31 / 2,
                               child: Card(
                                 elevation: 5,
                                 shape: RoundedRectangleBorder(
@@ -269,16 +266,19 @@ class _HomePageState extends State<HomePage> {
                                       height: 60,
                                       width: double.infinity,
                                       child: Center(
-                                        child: Text(
-                                          victasoftData!
-                                              .data.allevent[index].eventName,
-                                          textAlign: TextAlign.center,
-                                          style: SafeGoogleFont(
-                                            'Urbanist',
-                                            fontSize: 22 * ffem,
-                                            fontWeight: FontWeight.w400,
-                                            height: 1.3 * ffem / fem,
-                                            color: Colors.black,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: Text(
+                                            victasoftData!
+                                                .data.allevent[index].eventName,
+                                            textAlign: TextAlign.center,
+                                            style: SafeGoogleFont(
+                                              'Urbanist',
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w400,
+                                              height: 1.3,
+                                              color: Colors.black,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -297,64 +297,82 @@ class _HomePageState extends State<HomePage> {
                                           children: [
                                             Column(
                                               children: [
-                                                Text(
-                                                  formattedDate,
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont(
-                                                    'Urbanist',
-                                                    fontSize: 14 * ffem,
-                                                    fontWeight: FontWeight.bold,
-                                                    height: 1.0 * ffem / fem,
-                                                    color: Colors.black,
+                                                FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    formattedDate,
+                                                    textAlign: TextAlign.center,
+                                                    style: SafeGoogleFont(
+                                                      'Urbanist',
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      height: 1.0,
+                                                      color: Colors.black,
+                                                    ),
                                                   ),
                                                 ),
-                                                Text(
-                                                  formattedTime,
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont(
-                                                    'Urbanist',
-                                                    fontSize: 14 * ffem,
-                                                    height: 1.0 * ffem / fem,
-                                                    color: Colors.black,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Column(
-                                              children: [
-                                                Text(
-                                                  "To",
-                                                  style: SafeGoogleFont(
-                                                    'Urbanist',
-                                                    fontSize: 18 * ffem,
-                                                    fontWeight: FontWeight.w400,
-                                                    height: 1.0 * ffem / fem,
-                                                    color: Colors.cyan,
+                                                FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    formattedTime,
+                                                    textAlign: TextAlign.center,
+                                                    style: SafeGoogleFont(
+                                                      'Urbanist',
+                                                      fontSize: 12,
+                                                      height: 1.0,
+                                                      color: Colors.black,
+                                                    ),
                                                   ),
                                                 ),
                                               ],
                                             ),
                                             Column(
                                               children: [
-                                                Text(
-                                                  formattedDate,
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont(
-                                                    'Urbanist',
-                                                    fontSize: 14 * ffem,
-                                                    fontWeight: FontWeight.bold,
-                                                    height: 1.0 * ffem / fem,
-                                                    color: Colors.black,
+                                                FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    "To",
+                                                    style: SafeGoogleFont(
+                                                      'Urbanist',
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      height: 1.0,
+                                                      color: Colors.cyan,
+                                                    ),
                                                   ),
                                                 ),
-                                                Text(
-                                                  formattedTime,
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont(
-                                                    'Urbanist',
-                                                    fontSize: 14 * ffem,
-                                                    height: 1.0 * ffem / fem,
-                                                    color: Colors.black,
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    formattedDate,
+                                                    textAlign: TextAlign.center,
+                                                    style: SafeGoogleFont(
+                                                      'Urbanist',
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      height: 1.0,
+                                                      color: Colors.black,
+                                                    ),
+                                                  ),
+                                                ),
+                                                FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    formattedTime,
+                                                    textAlign: TextAlign.center,
+                                                    style: SafeGoogleFont(
+                                                      'Urbanist',
+                                                      fontSize: 12,
+                                                      height: 1.0,
+                                                      color: Colors.black,
+                                                    ),
                                                   ),
                                                 ),
                                               ],
@@ -403,56 +421,56 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     // autogrouptwd5KZg (BZ621orKbGWjUrysnZTWD5)
-                    margin: EdgeInsets.fromLTRB(
-                        27 * fem, 0 * fem, 28 * fem, 6 * fem),
+                    margin: EdgeInsets.fromLTRB(27, 0, 28, 6),
                     width: double.infinity,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Container(
-                          // eventnearyouSPQ (3856:21441)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 54 * fem, 1 * fem),
-                          padding: EdgeInsets.fromLTRB(
-                              0 * fem, 8 * fem, 0 * fem, 0 * fem),
-                          child: Text(
-                            'POPULAR NOW',
-                            style: SafeGoogleFont(
-                              'Urbanist',
-                              fontSize: 18 * ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.2 * ffem / fem,
-                              letterSpacing: 6.48 * fem,
-                              color: const Color(0xff2f243f),
+                          margin: EdgeInsets.fromLTRB(0, 0, 54, 1),
+                          padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              'POPULAR NOW',
+                              style: SafeGoogleFont(
+                                'Urbanist',
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                height: 1.2,
+                                letterSpacing: 6.48,
+                                color: const Color(0xff2f243f),
+                              ),
                             ),
                           ),
                         ),
                         Container(
                           // viewallHQ2 (3856:21476)
-                          margin: EdgeInsets.fromLTRB(
-                              25 * fem, 0 * fem, 5 * fem, 0 * fem),
-                          child: Text(
-                            'VIEW ALL',
-                            textAlign: TextAlign.right,
-                            style: SafeGoogleFont(
-                              'Urbanist',
-                              fontSize: 18 * ffem,
-                              fontWeight: FontWeight.w400,
-                              height: 1.2 * ffem / fem,
-                              color: const Color(0xff038e9c),
+                          margin: EdgeInsets.fromLTRB(25, 0, 5, 0),
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              'VIEW ALL',
+                              textAlign: TextAlign.right,
+                              style: SafeGoogleFont(
+                                'Urbanist',
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                                height: 1.2,
+                                color: const Color(0xff038e9c),
+                              ),
                             ),
                           ),
                         ),
                         Container(
                           // vector6nbg (3856:21474)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 5 * fem, 2 * fem),
-                          width: 9 * fem,
-                          height: 17 * fem,
+                          margin: EdgeInsets.fromLTRB(0, 0, 5, 2),
+                          width: 9,
+                          height: 17,
                           child: Image.asset(
                             'assets/images/vector-6-9dp.png',
-                            width: 9 * fem,
-                            height: 17 * fem,
+                            width: 9,
+                            height: 17,
                           ),
                         ),
                       ],
@@ -470,8 +488,8 @@ class _HomePageState extends State<HomePage> {
                           return Padding(
                             padding: const EdgeInsets.fromLTRB(10, 30, 10, 0),
                             child: SizedBox(
-                              width: 388.86 * fem / 2,
-                              height: 265.31 * fem / 2,
+                              width: 388.86 / 2,
+                              height: 265.31 / 2,
                               child: Card(
                                 elevation: 5,
                                 shape: RoundedRectangleBorder(
@@ -496,16 +514,19 @@ class _HomePageState extends State<HomePage> {
                                       height: 60,
                                       width: double.infinity,
                                       child: Center(
-                                        child: Text(
-                                          victasoftData!
-                                              .data.allevent[index].eventName,
-                                          textAlign: TextAlign.center,
-                                          style: SafeGoogleFont(
-                                            'Urbanist',
-                                            fontSize: 22 * ffem,
-                                            fontWeight: FontWeight.w400,
-                                            height: 1.3 * ffem / fem,
-                                            color: Colors.black,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: Text(
+                                            victasoftData!
+                                                .data.allevent[index].eventName,
+                                            textAlign: TextAlign.center,
+                                            style: SafeGoogleFont(
+                                              'Urbanist',
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w400,
+                                              height: 1.3,
+                                              color: Colors.black,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -524,64 +545,82 @@ class _HomePageState extends State<HomePage> {
                                           children: [
                                             Column(
                                               children: [
-                                                Text(
-                                                  formattedDate,
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont(
-                                                    'Urbanist',
-                                                    fontSize: 14 * ffem,
-                                                    fontWeight: FontWeight.bold,
-                                                    height: 1.0 * ffem / fem,
-                                                    color: Colors.black,
+                                                FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    formattedDate,
+                                                    textAlign: TextAlign.center,
+                                                    style: SafeGoogleFont(
+                                                      'Urbanist',
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      height: 1.0,
+                                                      color: Colors.black,
+                                                    ),
                                                   ),
                                                 ),
-                                                Text(
-                                                  formattedTime,
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont(
-                                                    'Urbanist',
-                                                    fontSize: 14 * ffem,
-                                                    height: 1.0 * ffem / fem,
-                                                    color: Colors.black,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Column(
-                                              children: [
-                                                Text(
-                                                  "To",
-                                                  style: SafeGoogleFont(
-                                                    'Urbanist',
-                                                    fontSize: 18 * ffem,
-                                                    fontWeight: FontWeight.w400,
-                                                    height: 1.0 * ffem / fem,
-                                                    color: Colors.cyan,
+                                                FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    formattedTime,
+                                                    textAlign: TextAlign.center,
+                                                    style: SafeGoogleFont(
+                                                      'Urbanist',
+                                                      fontSize: 12,
+                                                      height: 1.0,
+                                                      color: Colors.black,
+                                                    ),
                                                   ),
                                                 ),
                                               ],
                                             ),
                                             Column(
                                               children: [
-                                                Text(
-                                                  formattedDate,
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont(
-                                                    'Urbanist',
-                                                    fontSize: 14 * ffem,
-                                                    fontWeight: FontWeight.bold,
-                                                    height: 1.0 * ffem / fem,
-                                                    color: Colors.black,
+                                                FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    "To",
+                                                    style: SafeGoogleFont(
+                                                      'Urbanist',
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      height: 1.0,
+                                                      color: Colors.cyan,
+                                                    ),
                                                   ),
                                                 ),
-                                                Text(
-                                                  formattedTime,
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont(
-                                                    'Urbanist',
-                                                    fontSize: 14 * ffem,
-                                                    height: 1.0 * ffem / fem,
-                                                    color: Colors.black,
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    formattedDate,
+                                                    textAlign: TextAlign.center,
+                                                    style: SafeGoogleFont(
+                                                      'Urbanist',
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      height: 1.0,
+                                                      color: Colors.black,
+                                                    ),
+                                                  ),
+                                                ),
+                                                FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    formattedTime,
+                                                    textAlign: TextAlign.center,
+                                                    style: SafeGoogleFont(
+                                                      'Urbanist',
+                                                      fontSize: 12,
+                                                      height: 1.0,
+                                                      color: Colors.black,
+                                                    ),
                                                   ),
                                                 ),
                                               ],
@@ -621,205 +660,263 @@ class _HomePageState extends State<HomePage> {
                         }),
                   ),
                   const SizedBox(
-                    height: 15,
-                  ),
-                  const Divider(
-                    endIndent: 310,
-                    indent: 20,
-                    color: Colors.cyan,
+                    height: 25,
                   ),
                   Container(
-                    // autogrouptwd5KZg (BZ621orKbGWjUrysnZTWD5)
-                    margin: EdgeInsets.fromLTRB(
-                        27 * fem, 0 * fem, 28 * fem, 6 * fem),
-                    width: double.infinity,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Container(
-                          // eventnearyouSPQ (3856:21441)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 54 * fem, 1 * fem),
-                          padding: EdgeInsets.fromLTRB(
-                              0 * fem, 8 * fem, 0 * fem, 0 * fem),
-                          child: Text(
-                            'RECENTLY VIEWED',
-                            style: SafeGoogleFont(
-                              'Urbanist',
-                              fontSize: 18 * ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.2 * ffem / fem,
-                              letterSpacing: 6.48 * fem,
-                              color: const Color(0xff2f243f),
+                    height: 500,
+                    color: Colors.grey.shade200,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 40),
+                      child: Column(
+                        children: [
+                          const Divider(
+                            endIndent: 310,
+                            indent: 20,
+                            color: Colors.cyan,
+                          ),
+                          Container(
+                            margin: EdgeInsets.fromLTRB(27, 0, 28, 6),
+                            width: double.infinity,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.fromLTRB(0, 0, 54, 1),
+                                  padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: Text(
+                                      'RECENTLY VIEWED',
+                                      style: SafeGoogleFont(
+                                        'Urbanist',
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                        height: 1.2,
+                                        letterSpacing: 6.48,
+                                        color: const Color(0xff2f243f),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  Container(
-                    height: 350,
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: victasoftData?.data.eventcategory.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.fromLTRB(10, 30, 10, 0),
-                            child: SizedBox(
-                              width: 388.86 * fem / 2,
-                              height: 265.31 * fem / 2,
-                              child: Card(
-                                elevation: 5,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                ),
-                                child: Column(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(25.0),
-                                          topRight: Radius.circular(25.0)),
-                                      child: Image.network(
-                                        width: 428,
-                                        height: 141,
-                                        victasoftData!.data.eventcategory[index]
-                                            .categoryImage,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Container(
-                                      color: Colors.cyan.shade50,
-                                      height: 60,
-                                      width: double.infinity,
-                                      child: Center(
-                                        child: Text(
-                                          victasoftData!
-                                              .data
-                                              .eventcategory[index]
-                                              .categoryName,
-                                          textAlign: TextAlign.center,
-                                          style: SafeGoogleFont(
-                                            'Urbanist',
-                                            fontSize: 22 * ffem,
-                                            fontWeight: FontWeight.w400,
-                                            height: 1.3 * ffem / fem,
-                                            color: Colors.black,
-                                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Container(
+                            height: 350,
+                            child: ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemCount:
+                                    victasoftData?.data.eventcategory.length,
+                                itemBuilder: (context, index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.fromLTRB(
+                                        10, 30, 10, 0),
+                                    child: SizedBox(
+                                      width: 388.86 / 2,
+                                      height: 265.31 / 2,
+                                      child: Card(
+                                        elevation: 5,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(25),
                                         ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 5,
-                                    ),
-                                    Container(
-                                      height: 60,
-                                      width: double.infinity,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(top: 16),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
+                                        child: Column(
                                           children: [
-                                            Column(
-                                              children: [
-                                                Text(
-                                                  formattedDate,
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont(
-                                                    'Urbanist',
-                                                    fontSize: 14 * ffem,
-                                                    fontWeight: FontWeight.bold,
-                                                    height: 1.0 * ffem / fem,
-                                                    color: Colors.black,
-                                                  ),
-                                                ),
-                                                Text(
-                                                  formattedTime,
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont(
-                                                    'Urbanist',
-                                                    fontSize: 14 * ffem,
-                                                    height: 1.0 * ffem / fem,
-                                                    color: Colors.black,
-                                                  ),
-                                                ),
-                                              ],
+                                            ClipRRect(
+                                              borderRadius:
+                                                  const BorderRadius.only(
+                                                      topLeft:
+                                                          Radius.circular(25.0),
+                                                      topRight: Radius.circular(
+                                                          25.0)),
+                                              child: Image.network(
+                                                width: 428,
+                                                height: 141,
+                                                victasoftData!
+                                                    .data
+                                                    .eventcategory[index]
+                                                    .categoryImage,
+                                                fit: BoxFit.cover,
+                                              ),
                                             ),
-                                            Column(
-                                              children: [
-                                                Text(
-                                                  "To",
-                                                  style: SafeGoogleFont(
-                                                    'Urbanist',
-                                                    fontSize: 18 * ffem,
-                                                    fontWeight: FontWeight.w400,
-                                                    height: 1.0 * ffem / fem,
-                                                    color: Colors.cyan,
+                                            Container(
+                                              color: Colors.cyan.shade50,
+                                              height: 60,
+                                              width: double.infinity,
+                                              child: Center(
+                                                child: FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    victasoftData!
+                                                        .data
+                                                        .eventcategory[index]
+                                                        .categoryName,
+                                                    textAlign: TextAlign.center,
+                                                    style: SafeGoogleFont(
+                                                      'Urbanist',
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      height: 1.3,
+                                                      color: Colors.black,
+                                                    ),
                                                   ),
                                                 ),
-                                              ],
+                                              ),
                                             ),
-                                            Column(
-                                              children: [
-                                                Text(
-                                                  formattedDate,
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont(
-                                                    'Urbanist',
-                                                    fontSize: 14 * ffem,
-                                                    fontWeight: FontWeight.bold,
-                                                    height: 1.0 * ffem / fem,
-                                                    color: Colors.black,
-                                                  ),
-                                                ),
-                                                Text(
-                                                  formattedTime,
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont(
-                                                    'Urbanist',
-                                                    fontSize: 14 * ffem,
-                                                    height: 1.0 * ffem / fem,
-                                                    color: Colors.black,
-                                                  ),
-                                                ),
-                                              ],
+                                            SizedBox(
+                                              height: 5,
                                             ),
+                                            Container(
+                                              height: 60,
+                                              width: double.infinity,
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    top: 16),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceAround,
+                                                  children: [
+                                                    Column(
+                                                      children: [
+                                                        FittedBox(
+                                                          fit: BoxFit.scaleDown,
+                                                          child: Text(
+                                                            formattedDate,
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style:
+                                                                SafeGoogleFont(
+                                                              'Urbanist',
+                                                              fontSize: 12,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              height: 1.0,
+                                                              color:
+                                                                  Colors.black,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        FittedBox(
+                                                          fit: BoxFit.scaleDown,
+                                                          child: Text(
+                                                            formattedTime,
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style:
+                                                                SafeGoogleFont(
+                                                              'Urbanist',
+                                                              fontSize: 12,
+                                                              height: 1.0,
+                                                              color:
+                                                                  Colors.black,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Column(
+                                                      children: [
+                                                        FittedBox(
+                                                          fit: BoxFit.scaleDown,
+                                                          child: Text(
+                                                            "To",
+                                                            style:
+                                                                SafeGoogleFont(
+                                                              'Urbanist',
+                                                              fontSize: 14,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400,
+                                                              height: 1.0,
+                                                              color:
+                                                                  Colors.cyan,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Column(
+                                                      children: [
+                                                        FittedBox(
+                                                          fit: BoxFit.scaleDown,
+                                                          child: Text(
+                                                            formattedDate,
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style:
+                                                                SafeGoogleFont(
+                                                              'Urbanist',
+                                                              fontSize: 12,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              height: 1.0,
+                                                              color:
+                                                                  Colors.black,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        FittedBox(
+                                                          fit: BoxFit.scaleDown,
+                                                          child: Text(
+                                                            formattedTime,
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style:
+                                                                SafeGoogleFont(
+                                                              'Urbanist',
+                                                              fontSize: 12,
+                                                              height: 1.0,
+                                                              color:
+                                                                  Colors.black,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                            const Divider(
+                                              height: 10,
+                                            ),
+                                            const SizedBox(
+                                              height: 4,
+                                            ),
+                                            const Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                Icon(Iconsax.heart),
+                                                SizedBox(
+                                                  width: 8,
+                                                ),
+                                                Icon(Iconsax.share),
+                                                SizedBox(
+                                                  width: 8,
+                                                ),
+                                                Icon(Iconsax.user_add)
+                                              ],
+                                            )
                                           ],
                                         ),
                                       ),
                                     ),
-                                    const Divider(
-                                      height: 10,
-                                    ),
-                                    const SizedBox(
-                                      height: 4,
-                                    ),
-                                    const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Icon(Iconsax.heart),
-                                        SizedBox(
-                                          width: 8,
-                                        ),
-                                        Icon(Iconsax.share),
-                                        SizedBox(
-                                          width: 8,
-                                        ),
-                                        Icon(Iconsax.user_add)
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          );
-                        }),
+                                  );
+                                }),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                   const SizedBox(
                     height: 15,
@@ -831,27 +928,27 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     // autogrouptwd5KZg (BZ621orKbGWjUrysnZTWD5)
-                    margin: EdgeInsets.fromLTRB(
-                        27 * fem, 0 * fem, 28 * fem, 6 * fem),
+                    margin: EdgeInsets.fromLTRB(27, 0, 28, 6),
                     width: double.infinity,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Container(
                           // eventnearyouSPQ (3856:21441)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 54 * fem, 1 * fem),
-                          padding: EdgeInsets.fromLTRB(
-                              0 * fem, 8 * fem, 0 * fem, 0 * fem),
-                          child: Text(
-                            'RECENTLY VIEWED',
-                            style: SafeGoogleFont(
-                              'Urbanist',
-                              fontSize: 18 * ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.2 * ffem / fem,
-                              letterSpacing: 6.48 * fem,
-                              color: const Color(0xff2f243f),
+                          margin: EdgeInsets.fromLTRB(0, 0, 54, 1),
+                          padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              'RECENTLY VIEWED',
+                              style: SafeGoogleFont(
+                                'Urbanist',
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                height: 1.2,
+                                letterSpacing: 6.48,
+                                color: const Color(0xff2f243f),
+                              ),
                             ),
                           ),
                         ),
@@ -870,8 +967,8 @@ class _HomePageState extends State<HomePage> {
                           return Padding(
                             padding: const EdgeInsets.fromLTRB(10, 30, 10, 0),
                             child: SizedBox(
-                              width: 388.86 * fem / 2,
-                              height: 265.31 * fem / 2,
+                              width: 388.86 / 2,
+                              height: 265.31 / 2,
                               child: Card(
                                 elevation: 5,
                                 shape: RoundedRectangleBorder(
@@ -895,41 +992,44 @@ class _HomePageState extends State<HomePage> {
                                       height: 60,
                                       width: double.infinity,
                                       child: Center(
-                                        child: Text(
-                                          victasoftData!
-                                              .data
-                                              .eventcategory[index]
-                                              .categoryName,
-                                          textAlign: TextAlign.center,
-                                          style: SafeGoogleFont(
-                                            'Urbanist',
-                                            fontSize: 22 * ffem,
-                                            fontWeight: FontWeight.w400,
-                                            height: 1.3 * ffem / fem,
-                                            color: Colors.black,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: Text(
+                                            victasoftData!
+                                                .data
+                                                .eventcategory[index]
+                                                .categoryName,
+                                            textAlign: TextAlign.center,
+                                            style: SafeGoogleFont(
+                                              'Urbanist',
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w400,
+                                              height: 1.3,
+                                              color: Colors.black,
+                                            ),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Container(
-                                      height: 30,
+                                      height: 100,
                                       width: double.infinity,
                                       child: Text(
-                                        victasoftData!
-                                            .data.allevent[index].eventLocation
+                                        victasoftData!.data.eventcategory[index]
+                                            .categoryDescription
                                             .toString(),
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Urbanist',
-                                          fontSize: 20 * ffem,
+                                          fontSize: 12,
                                           fontWeight: FontWeight.w400,
-                                          height: 1.0 * ffem / fem,
+                                          height: 1.0,
                                           color: Colors.cyan,
                                         ),
                                       ),
                                     ),
                                     const SizedBox(
-                                      height: 4,
+                                      height: 10,
                                     ),
                                   ],
                                 ),
@@ -942,6 +1042,54 @@ class _HomePageState extends State<HomePage> {
               ),
             )
           : const Center(child: CircularProgressIndicator()),
+      bottomNavigationBar: SizedBox(
+        height: 65,
+        child: BottomNavigationBar(
+          backgroundColor: Colors.grey.shade300,
+          elevation: 5.0,
+          iconSize: 26,
+          type: BottomNavigationBarType.shifting,
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+          selectedItemColor: Colors.cyan.shade500,
+          items: [
+            BottomNavigationBarItem(
+              label: 'Search',
+              icon: Icon(
+                Iconsax.search_favorite,
+                color: Colors.black,
+              ),
+            ),
+            BottomNavigationBarItem(
+              label: 'Save',
+              icon: Icon(
+                Iconsax.save_2,
+                color: Colors.black,
+              ),
+            ),
+            BottomNavigationBarItem(
+              label: 'Liked',
+              icon: Icon(
+                Iconsax.heart,
+                color: Colors.black,
+              ),
+            ),
+            BottomNavigationBarItem(
+              label: 'User',
+              icon: Icon(
+                Iconsax.user,
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 }
