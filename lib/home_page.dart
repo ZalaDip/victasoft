@@ -420,7 +420,6 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.cyan,
                   ),
                   Container(
-                    // autogrouptwd5KZg (BZ621orKbGWjUrysnZTWD5)
                     margin: EdgeInsets.fromLTRB(27, 0, 28, 6),
                     width: double.infinity,
                     child: Row(
@@ -445,7 +444,6 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         Container(
-                          // viewallHQ2 (3856:21476)
                           margin: EdgeInsets.fromLTRB(25, 0, 5, 0),
                           child: FittedBox(
                             fit: BoxFit.scaleDown,
@@ -463,7 +461,6 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         Container(
-                          // vector6nbg (3856:21474)
                           margin: EdgeInsets.fromLTRB(0, 0, 5, 2),
                           width: 9,
                           height: 17,
@@ -927,14 +924,12 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.cyan,
                   ),
                   Container(
-                    // autogrouptwd5KZg (BZ621orKbGWjUrysnZTWD5)
                     margin: EdgeInsets.fromLTRB(27, 0, 28, 6),
                     width: double.infinity,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Container(
-                          // eventnearyouSPQ (3856:21441)
                           margin: EdgeInsets.fromLTRB(0, 0, 54, 1),
                           padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
                           child: FittedBox(
