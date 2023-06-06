@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
   String formattedDate =
       DateFormat('yyyy, MMM d').format(DateTime.utc(2022, 6, 20));
   String formattedTime = DateFormat('h:mm a').format(DateTime.utc(8, 30));
+
   @override
   void initState() {
     super.initState();
@@ -155,16 +156,17 @@ class _HomePageState extends State<HomePage> {
                       return Builder(
                         builder: (BuildContext context) {
                           return Container(
-                              margin: EdgeInsets.fromLTRB(0, 50, 8, 8),
-                              height: 151,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(25.0),
-                                child: Image.network(
-                                  i.bannerImage,
-                                  fit: BoxFit.cover,
-                                  height: 151,
-                                ),
-                              ));
+                            margin: EdgeInsets.fromLTRB(0, 50, 8, 8),
+                            height: 151,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(25.0),
+                              child: Image.network(
+                                i.bannerImage,
+                                fit: BoxFit.cover,
+                                height: 151,
+                              ),
+                            ),
+                          );
                         },
                       );
                     }).toList(),

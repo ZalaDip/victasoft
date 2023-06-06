@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:victadoft/http_request.dart';
 import 'package:victadoft/modal.dart';
 

@@ -1,6 +1,5 @@
 import 'package:http/http.dart' as http;
 import 'package:victadoft/constant.dart';
-
 import 'dart:async';
 import 'dart:convert';
 import '../exceptions.dart';
